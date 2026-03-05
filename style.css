@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="container">
+            <div class="logo">
+                <h2 style="color: white; margin: 0;">🎅 Ваше письмо готово!</h2>
+            </div>
+            <div class="nav-links">
+                <% navLinks.forEach(link=> { %>
+                    <a href="<%= link.href %>" class="btn btn-secondary">
+                        <%= link.text %>
+                    </a>
+                    <% }); %>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="letter">
+            <h1>🎄 Письмо Деду Морозу 🎅</h1>
+
+            <div class="meta">
+                <strong>Отправлено:</strong>
+                <%= letter.date %><br>
+                    <strong>От кого:</strong>
+                    <%= letter.name %>, <%= letter.age %>
+                            <%= getAgeWord(letter.age) %>
+            </div>
+
+            <div class="wish-box">
+                <p style="margin-bottom: 15px;"><strong>Дорогой Дедушка Мороз!</strong></p>
+                <p>
+                    <%= letter.wish %>
+                </p>
+            </div>
+
+            <div class="signature">
+                С уважением и любовью,<br>
+                <strong style="color: #d32f2f; font-size: 20px;">
+                    <%= letter.name %>
+                </strong><br>
+                ❄️ 🌟 🎁
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="/letter" class="btn btn-large">📝 Написать ещё одно письмо</a>
+            <a href="/" class="btn btn-secondary">🏠 На главную</a>
+        </div>
+
+        <div class="form-container" style="margin-top: 30px;">
+            <h3>✏️ Что дальше?</h3>
+            <p>Ваше письмо сохранено под номером <strong>#<%= letter.id %></strong>.</p>
+            <p>Вы можете написать ещё одно письмо или поделиться этим с друзьями!</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Письмо будет доставлено Деду Морозу до Нового года! 🎄</p>
+    </footer>
+</body>
+
+</html>

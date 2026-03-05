@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="container">
+            <div class="logo">
+                <h2 style="color: white; margin: 0;">ℹ️ О проекте</h2>
+            </div>
+            <div class="nav-links">
+                <% navLinks.forEach(link=> { %>
+                    <a href="<%= link.href %>" class="btn btn-secondary">
+                        <%= link.text %>
+                    </a>
+                    <% }); %>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="about-content">
+            <h1>О проекте "Письмо Деду Морозу"</h1>
+
+            <p>Этот проект создан для того, чтобы дети могли написать свои письма Деду Морозу в удобной и красивой
+                форме.</p>
+
+            <h2>🎯 Наша миссия</h2>
+            <p>Сохранить волшебство Нового года и помочь каждому ребёнку донести свои мечты до самого главного зимнего
+                волшебника!</p>
+
+            <h2>📞 Контакты</h2>
+            <div class="contact-info">
+                <p><strong>Адрес:</strong>
+                    <%= address %>
+                </p>
+                <p><strong>Телефон:</strong>
+                    <%= phone %>
+                </p>
+                <p><strong>Email:</strong>
+                    <%= email %>
+                </p>
+            </div>
+
+            <h2>🔒 Безопасность</h2>
+            <p>Все письма хранятся в безопасности и конфиденциально. Мы не передаём данные третьим лицам.</p>
+        </div>
+
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="/" class="btn">🏠 На главную</a>
+            <a href="/letter" class="btn btn-secondary">📝 Написать письмо</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2023 Проект "Письмо Деду Морозу". Все права защищены.</p>
+    </footer>
+</body>
+
+</html>
